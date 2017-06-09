@@ -1,0 +1,11 @@
+item.examplemod_LightningHammer.name=Lightning Hammer
+item.examplemod_Mug.name=Mug
+item.examplemod_StructureGel.name=Structure Gel
+item.examplemod_TeleportRod.name=Teleport Rod
+item.examplemod_WaterGun.name=Water Gun
+item.examplemod_ExplosionAmulet.name=Explosion Amulet
+
+tile.examplemod_StructureGrowth.name=Structure Growth
+tile.examplemod_HotCoals.name=Hot Coals
+
+entity.examplemod.EntityGelZombie.name=Gel Zombie
