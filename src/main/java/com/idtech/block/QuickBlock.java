@@ -47,13 +47,13 @@ public class QuickBlock extends Block {
 	protected static final String SHOVEL = "shovel";
 	
 	protected static final int WOOD = 0;
-	protected static final int STONE = 0;
-	protected static final int IRON = 0;
-	protected static final int DIAMOND = 0;
+	protected static final int STONE = 1;
+	protected static final int IRON = 2;
+	protected static final int DIAMOND = 3;
 
 
 
-	private static final Material defaultMaterial = Material.GROUND;
+	private static final Material defaultMaterial = Material.ROCK;
 	private static Set<QuickBlock> registry = new HashSet<QuickBlock>();
 	private static Map<String, QuickBlock> lookup = new HashMap<String, QuickBlock>();
 
@@ -174,6 +174,8 @@ public class QuickBlock extends Block {
 
 	@Override
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+		if (itemDropped == null)
+			return Item.getItemFromBlock(this);
 		return itemDropped;
 	}
 	
@@ -316,7 +318,7 @@ public class QuickBlock extends Block {
 
 	// Code below this point is used to generate JSON
 
-	private final void createModelJSON() {
+	protected final void createModelJSON() {
 		File f = Paths.get(".").resolve(JSONManager.assetsDir + "/models/block/" + JSONManager.jsonName(name) + ".json")
 				.toFile();
 
@@ -343,7 +345,7 @@ public class QuickBlock extends Block {
 		}
 	}
 
-	private final void createBlockStatesJSON() {
+	protected final void createBlockStatesJSON() {
 		File f = Paths.get(".").resolve(JSONManager.assetsDir + "/blockStates/" + JSONManager.jsonName(name) + ".json")
 				.toFile();
 
@@ -368,7 +370,7 @@ public class QuickBlock extends Block {
 		}
 	}
 
-	private final void createItemJSON() {
+	protected final void createItemJSON() {
 		File f = Paths.get(".").resolve(JSONManager.assetsDir + "/models/item/" + JSONManager.jsonName(name) + ".json")
 				.toFile();
 
