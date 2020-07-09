@@ -107,9 +107,11 @@ public class QuickItem extends Item {
 			item.setUnlocalizedName(BaseMod.MODID + "_" + JSONManager.safeString(item.name));
 			item.setCreativeTab(item.tab);
 			System.out.println("preInit: " + item.name);
-			GameRegistry.register(item.setRegistryName(item.name));
+			//GameRegistry.register(item.setRegistryName(item.name));
 		}
 	}
+	
+	
 
 	/**
 	 * This method should be called during the initialization phase
@@ -153,8 +155,9 @@ public class QuickItem extends Item {
 
 		// Draw a line from the player to where the player is aiming, save it if
 		// we hit a block.
+		// TODO: 1.12 Change - lookVec uses x, y, z
 		RayTraceResult blockHit = world.rayTraceBlocks(posVec,
-				posVec.addVector(lookVec.xCoord * range, lookVec.yCoord * range, lookVec.zCoord * range));
+				posVec.addVector(lookVec.x * range, lookVec.y * range, lookVec.z * range));
 		if (blockHit == null)
 			return null;
 		BlockPos block = blockHit.getBlockPos().offset(blockHit.sideHit);

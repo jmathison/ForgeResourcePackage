@@ -135,8 +135,8 @@ public class QuickBlock extends Block {
 			setBlockField(block, !block.material.blocksLight(), "translucent");
 
 			// Register the block and an item for the block.
-			GameRegistry.register(block.setRegistryName(block.name));
-			GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+			//GameRegistry.register(block.setRegistryName(block.name));
+			//GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
 
 		}
 	}

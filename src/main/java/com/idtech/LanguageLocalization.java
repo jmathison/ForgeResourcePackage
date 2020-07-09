@@ -28,8 +28,8 @@ public class LanguageLocalization {
 			builder.append(block.getUnlocalizedName() + ".name=" + block.getName() + "\n");
 		}
 		
-		File custom = Paths.get(".").resolve("../src/main/resources/assets/" + BaseMod.MODID + "/lang/en_US_custom.lang").toFile();
-		File f = Paths.get(".").resolve("../src/main/resources/assets/" + BaseMod.MODID + "/lang/en_US.lang").toFile();
+		File custom = Paths.get(".").resolve("../src/main/resources/assets/" + BaseMod.MODID + "/lang/en_us_custom.lang").toFile();
+		File f = Paths.get(".").resolve("../src/main/resources/assets/" + BaseMod.MODID + "/lang/en_us.lang").toFile();
 		if(f.exists()){
 			f.delete();
 		}
